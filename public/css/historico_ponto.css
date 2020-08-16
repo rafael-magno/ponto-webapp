@@ -1,0 +1,19 @@
+@media screen and (max-width: 767px) {
+  #historico thead {
+    display: none;
+  }
+
+  #historico tbody td {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-top: 0px;
+  }
+
+  #historico tbody td.registros {
+    font-size: -1;
+  }
+
+  #historico tbody tr {
+    border-top: 1px solid #dee2e6;
+  }
+}
