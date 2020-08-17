@@ -12,7 +12,7 @@ class CalcularSaldoTotalService
         
         $historicoPonto = ListarHistoricoPontoService::listar(null, $dataOntem);
 
-        $saldoDias = array_map(fn($dadosDia) => $dadosDia['saldoInt'], $historicoPonto['detalhamentoPorDia']);
+        $saldoDias = array_map(fn($dadosDia) => $dadosDia->saldoInt, $historicoPonto['detalhamentoPorDia']);
 
         $totalSaldo = $historicoPonto['saldoInicio'] + array_sum($saldoDias);
 

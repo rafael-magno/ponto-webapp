@@ -34,9 +34,20 @@ Se a url gerada for diferente de `http://localhost:8080`, a diretiva `app.baseUR
 
 Minimizar o terminal e rodar o sistema no navegador com a url informada.
 
+O sistema possui 2 módulos diferentes: administrativo(para usuarios administrativos) e o módulo de ponto (para usuário comum).
+
 ## Acesso administrador
 
 E-mail: admin@admin.com
+
 Senha: 12345678
 
-No login de administrador é possivel criar os usuários do sistema.
+No login de administrador só é possivel criar os usuários do sistema.
+
+## Acesso de usuário comum com alguns dados de exemplo
+
+E-mail: usuario@usuario.com
+
+Senha: 12345678
+
+No login de usuário comum é possível ver o saldo consolidado do banco de horas, incluir um novo registro de ponto e visualizar o histórico.

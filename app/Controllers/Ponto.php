@@ -9,7 +9,6 @@ use App\Services\ListarHistoricoPontoService;
 
 class Ponto extends BaseController
 {
-
     public function index()
     {
         helper('App\Helpers\saldo_hora');
@@ -31,15 +30,13 @@ class Ponto extends BaseController
     public function incluir()
     {
         $pontoModel = new PontoModel();
-        $registrosPonto = $pontoModel->listarPorUsuarioData(
+        $totalRegistrosPonto = $pontoModel->totalRegistrosPorUsuarioData(
             session('usuario.id'),
             date('Y-m-d')
         );
 
-        $entradaSaida = count($registrosPonto) % 2
-            ? 'Saída '
-            : 'Entrada ';
-        $entradaSaida .= floor(count($registrosPonto) / 2) + 1;
+        $entradaSaida = $totalRegistrosPonto % 2 ? 'Saída ' : 'Entrada ';
+        $entradaSaida .= floor($totalRegistrosPonto / 2) + 1;
 
         return view('incluir_ponto', [
             'entradaSaida' => $entradaSaida,
@@ -49,6 +46,10 @@ class Ponto extends BaseController
 
 	public function salvar()
 	{
+        if ($this->request->getMethod() != 'post') {
+            return redirect()->to('/ponto/incluir');
+        }
+
         InserirPontoService::inserir();
 
         return redirect()

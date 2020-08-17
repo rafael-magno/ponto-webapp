@@ -14,9 +14,9 @@
           <h1 id="horaAtual">
             <?php echo $horaAtual ?>
           </h1>
-          <a href="/ponto/salvar" class="btn btn-primary btn-lg btn-block mt-3">
-            Incluir
-          </a>
+          <form action="/ponto/salvar" method="post">
+            <input type="submit" name="incluir" value="Incluir" class="btn btn-primary btn-lg btn-block mt-3">
+          </form>
         </div>
       </div>
     </div>

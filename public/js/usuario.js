@@ -1,6 +1,11 @@
 $(document).ready(() => {
-  $('.hora').mask('00:00');
-  $('.data').mask('00/00/0000');
+  $('.hora').mask('00:00', {
+    clearIfNotMatch: true,
+  });
+  
+  $('.data').mask('00/00/0000', {
+    clearIfNotMatch: true,
+  });
 
   $( "#formUsuario" ).validate({
     rules: {

@@ -24,18 +24,18 @@
             <?php foreach ($detalhamentoPorDia as $detalhamento) { ?>
               <tr>
                 <td class="d-flex d-md-table-cell">
-                    <?php echo $detalhamento['dia'] ?>
+                    <?php echo $detalhamento->dia ?>
                 </td>
                 <td class="d-flex d-md-table-cell registros">
-                  <?php if (empty($detalhamento['registros'])) { ?>
+                  <?php if (empty($detalhamento->registros)) { ?>
                     Nenhum ponto registrado  
                   <?php } else { ?>
-                    <?php echo implode(' - ', $detalhamento['registros']) ?>
+                    <?php echo implode(' - ', $detalhamento->registros) ?>
                   <?php } ?>
                 </td>
                 <td class="d-flex d-md-table-cell">
-                  <strong class="<?php echo getClassText($detalhamento['saldo']) ?>">
-                    <?php echo $detalhamento['saldo'] ?>
+                  <strong class="<?php echo getClassText($detalhamento->saldo) ?>">
+                    <?php echo $detalhamento->saldo ?>
                   </strong>
                 </td>    
               </tr>

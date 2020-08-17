@@ -17,14 +17,13 @@ class PontoModel extends Model
         'hora',
     ];
 
-    public function listarPorUsuarioData($usuarioId, $data)
+    public function totalRegistrosPorUsuarioData($usuarioId, $data)
     {
         return $this->builder()
             ->where('usuario_id', $usuarioId)
             ->where('data', $data)
             ->orderBy('hora')
-            ->get()
-            ->getResult();
+            ->countAllResults();
     }
 
     public function listarPorUsuarioIntervaloData($usuarioId, $dataInicio, $dataFim)

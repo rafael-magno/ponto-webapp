@@ -26,6 +26,7 @@ class SalvarUsuarioService
 
     public static function salvarComCargaHoraria(array $dados)
     {
+        $dados['saldo_inicio'] = $dados['saldo_inicio'] ?: '00:00';
         $dados['saldo_inicio'] = $dados['sinal_saldo_inicio'] . $dados['saldo_inicio'];
 
         $cargaHoraria = new CargaHoraria($dados);
