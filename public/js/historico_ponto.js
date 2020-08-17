@@ -40,6 +40,6 @@ $(document).ready(() => {
     "minDate": $('#dataMinima').val(),
     "maxDate": moment(),
   }, (start, end) => {
-    window.location = '/ponto/index/' + start.format('YYYY-MM-DD') + '/' + end.format('YYYY-MM-DD')
+    window.location = '/ponto/historico/' + start.format('YYYY-MM-DD') + '/' + end.format('YYYY-MM-DD')
   });
 })
